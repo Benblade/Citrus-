@@ -1,0 +1,29 @@
+
+public class BiggestSmallest {
+
+    public int biggestDigit( int num ) {
+       int big = 0;
+       while (num > 0) {
+        int digit = num % 10; //gets digit
+            if (big < digit)
+            big = digit;
+        num /= 10;
+       }
+        return big; 
+    }
+
+    public int smallestDigit( int num ) {
+        int small = 100;
+        while (num > 0) {
+            int digit = num % 10; 
+            if (small > digit)
+            small = digit;
+        num /= 10; 
+        
+  
+        
+        
+        }
+        return small; 
+    }
+}
