@@ -1,0 +1,95 @@
+public class ConnectFour {
+
+	private String[][] gameBoard;
+
+	public ConnectFour ( String game ) {
+		setBoard ( game );
+	}
+
+	public void setBoard ( String game ) {
+		gameBoard = new String [6][7];
+		int count = 0;
+		for ( int i = 0; i < gameBoard.length; i++ ) {
+			for ( int z = 0; z < gameBoard[i].length; z++ ) {
+				gameBoard[i][z] = game.substring ( count, count + 1 );
+				count++;
+			}
+		}
+	}
+
+	public String whoWon() {
+		String winr = "R";
+		String winy = "Y";
+		int con = 0;
+		for ( int i = 0; i < gameBoard.length; i++ ) {
+			for ( int e = 0; e < gameBoard[0].length - 3; e++ ) {
+				if ( gameBoard[i][e] != "." && gameBoard[i][e + 1] != "." && gameBoard[i][e + 2] != "." && gameBoard[i][e + 3] != "."  && gameBoard[i][e].equals ( gameBoard[i][e + 1] ) && gameBoard[i][e].equals ( gameBoard[i][e + 2] ) && gameBoard[i][e].equals ( gameBoard[i][e + 3] ) )
+					if ( gameBoard[i][e].equals ( winr ) ) {
+						return winr;
+					} else if ( gameBoard[i][e].equals ( winy ) ) {
+						return winy;
+					}
+
+			}
+		}
+		for ( int i = 0; i < gameBoard.length - 3; i++ ) {
+			for ( int e = 0; e < gameBoard[0].length; e++ ) {
+				if ( gameBoard[i][e] != "." && gameBoard[i + 1][e] != "." && gameBoard[i + 2][e] != "." && gameBoard[i + 3][e] != "."  && gameBoard[i][e].equals ( gameBoard[i + 1][e] ) && gameBoard[i][e].equals ( gameBoard[i + 2][e] ) && gameBoard[i][e].equals ( gameBoard[i + 3][e] ) )
+					if ( gameBoard[i][e].equals ( winr ) ) {
+						return winr;
+					} else if ( gameBoard[i][e].equals ( winy ) ) {
+						return winy;
+					}
+
+			}
+		}
+		for ( int i = 0; i < gameBoard.length - 3; i++ ) {
+			for ( int e = 0; e < gameBoard[0].length - 3; e++ ) {
+				if ( gameBoard[i][e] != "." && gameBoard[i + 1][e + 1] != "." && gameBoard[i + 2][e + 2] != "." && gameBoard[i + 3][e + 3] != "."  && gameBoard[i][e].equals ( gameBoard[i + 1][e + 1] ) && gameBoard[i][e].equals ( gameBoard[i + 2][e + 2] ) && gameBoard[i][e].equals ( gameBoard[i + 3][e + 3] ) )
+					if ( gameBoard[i][e].equals ( winr ) ) {
+						return winr;
+					} else if ( gameBoard[i][e].equals ( winy ) ) {
+						return winy;
+					}
+
+			}
+		}
+		for ( int i = 0; i < gameBoard.length - 3; i++ ) {
+			for ( int e = 3; e < gameBoard[0].length; e++ ) {
+				if ( gameBoard[i][e] != "." && gameBoard[i + 1][e - 1] != "." && gameBoard[i + 2][e - 2] != "." && gameBoard[i + 3][e - 3] != "."  && gameBoard[i][e].equals ( gameBoard[i + 1][e - 1] ) && gameBoard[i][e].equals ( gameBoard[i + 2][e - 2] ) && gameBoard[i][e].equals ( gameBoard[i + 3][e - 3] ) )
+					if ( gameBoard[i][e].equals ( winr ) ) {
+						return winr;
+					} else if ( gameBoard[i][e].equals ( winy ) ) {
+						return winy;
+					}
+
+			}
+		}
+		return "";
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public String toString() {
+		String out = "";
+		for ( String[] row : gameBoard ) {
+			for ( String c : row ) {
+				out += c;
+			}
+			out += "\n";
+		}
+		return out;
+	}
+}
