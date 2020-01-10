@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.io.File;
+public class Room {
+	public static void main ( String[]args ) throws Exception {
+		Scanner f = new Scanner ( new File ( "pr12.dat" ) );
+		int Tests = f.nextInt();
+		f.nextLine();
+		
+		for ( int t = 0; t < Tests;t++ ) {
+		    Scanner line= new Scanner(f.nextLine());
+			int gallon = 300;
+			int leg = 0;
+			int height = 0;
+			int neg = 0;
+			
+			String color = line.next();
+			String g = ( " GALLON(S)" );
+			
+			//color = line.next();
+			leg = line.nextInt();
+			height = line.nextInt();
+			neg = line.nextInt();
+			
+			int sqf = leg * height - neg;
+			int paint = (sqf / gallon)+1;
+			System.out.println ( color + " " + paint + g );
+		}
+	}
+}
