@@ -1,0 +1,20 @@
+import java.util.Scanner;
+import java.io.File;
+public class Room {
+	public static void main ( String[]args ) throws Exception {
+		Scanner f = new Scanner ( new File ( "pr26.dat" ) );
+		int Tests = f.nextInt();
+		String cnt = "ODD COUNT = ";
+		int odds = 0;
+		f.nextLine();
+		for ( int t = 0; t < Tests; t++ ) {
+			Scanner line = new Scanner ( f.nextLine() );
+			while ( line.hasNext() ) {
+				if ( line.nextInt() % 2 != 0 )
+					odds++;
+			}
+			System.out.println ( cnt + odds );
+			odds = 0;
+		}
+	}
+}
