@@ -19,10 +19,6 @@ public class BiggestSmallest {
             if (small > digit)
             small = digit;
         num /= 10; 
-        
-  
-        
-        
         }
         return small; 
     }
