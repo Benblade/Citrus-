@@ -1,0 +1,22 @@
+import java.util.Scanner;
+import java.io.File;
+public class Big {
+	public static void main ( String[]args ) throws Exception {
+		Scanner f = new Scanner ( new File ( "pr23.dat" ) );
+		int Tests = f.nextInt();
+		f.nextLine();
+
+
+		for ( int t = 0; t < Tests; t++ ) {
+			Scanner line = new Scanner ( f.nextLine() );
+			int big = Integer.MIN_VALUE ;
+			
+			while ( line.hasNext() ) {
+			    int a = line.nextInt();
+				if ( big <a )
+					big = a;
+			}
+			System.out.println ("BIGGEST = " + big );
+		}
+	}
+}
