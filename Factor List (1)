@@ -1,0 +1,34 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class FactorList {
+
+	public static ArrayList<Integer> getListOfFactors ( int number ) {
+		int apple = number;
+		ArrayList orange = new ArrayList<>();
+		for ( int i = 2; i < apple; i++ ) {
+			if ( apple % i == 0 ) {
+				orange.add ( i );
+			}
+		}
+		return orange;
+	}
+
+	public static boolean isPrime ( int number ) {
+		ArrayList<Integer> cherry = getListOfFactors ( number );
+		if ( cherry.size() == 0 ) {
+			return true;
+		}
+		return false;
+	}
+
+	public static void removePrimes ( List<Integer> nums ) {
+		for ( int i = 0; i < nums.size(); i++ ) {
+		     boolean pineapple=isPrime(nums.get(i));
+			if ( pineapple== true ) {
+				nums.remove ( i );
+				i--;
+			}
+		}
+	}
+}
